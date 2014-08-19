@@ -1,0 +1,32 @@
+<configuration debug="true">
+  <appender name="LOGCAT" class="ch.qos.logback.classic.android.LogcatAppender">
+    <tagEncoder>
+      <pattern>%logger{0}</pattern>
+    </tagEncoder>
+    <encoder>
+      <pattern>### [%thread] %msg</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <!-- lazy initialization: don't create the file until 1st write -->
+    <lazy>true</lazy>
+
+    <!-- relative path is equivalent to ${DATA_DIR}/log.txt, which resolves
+         to something like /data/data/${PACKAGE_NAME}/files/log.txt -->
+    <file>log.txt</file>
+
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+    <appender-ref ref="FILE" />
+  </appender>
+
+  <root level="DEBUG">
+    <appender-ref ref="ASYNC" />
+    <appender-ref ref="LOGCAT" />
+  </root>
+</configuration>

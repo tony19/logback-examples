@@ -3,11 +3,13 @@ This project demonstrates how to build an app that depends on an Android library
 project (apklib) that uses logback-android.
 
 ### Modules
-#### LibFoo
-`Foo.sayHello()` uses SLF4J to output "hello world". logback-android is on classpath.
+*Library*
 
-#### AppBar
-`Bar.onCreate()` calls `Foo.sayHello()`.
+ * `Foo.sayHello()` uses SLF4J to output "hello world". logback-android is on classpath.
+
+*App*
+
+* `Bar.onCreate()` calls `Foo.sayHello()`.
 
 ### Build
 

@@ -14,7 +14,7 @@ project (apklib) that uses logback-android.
 ### Build
 
     git clone https://github.com/tony19/logback-examples.git -b sandbox
-    cd logback-examples/android/lib-project
+    cd logback-examples/logback-android/apklib
     ./build.sh
 
 `build.sh` will build and install the library and then the app.

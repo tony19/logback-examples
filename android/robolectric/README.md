@@ -45,16 +45,26 @@ Setting the property directly with `System.setProperty()` is reliable for both
 command-line builds and from Eclipse.
 
 ```java
-@BeforeClass
-public static void beforeClass() {
-  // Robolectric somehow prevents logback from grabbing assets,
-  // so tell logback to look in a specific location
-  System.setProperty(ContextInitializer.CONFIG_FILE_PROPERTY, "assets/logback.xml");
-}
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.robolectric.RobolectricTestRunner;
 
-@AfterClass
-public static void afterClass() {
-  System.clearProperty(ContextInitializer.CONFIG_FILE_PROPERTY);
+@RunWith(RobolectricTestRunner.class)
+public class HomeActivityTest {
+
+  @BeforeClass
+  public static void beforeClass() {
+    // Robolectric somehow prevents logback from grabbing assets,
+    // so tell logback to look in a specific location
+    System.setProperty(ContextInitializer.CONFIG_FILE_PROPERTY, "assets/logback.xml");
+  }
+
+  @AfterClass
+  public static void afterClass() {
+    System.clearProperty(ContextInitializer.CONFIG_FILE_PROPERTY);
+  }
+  
+  ...
 }
 ```
 

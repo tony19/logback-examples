@@ -5,13 +5,15 @@ Note that Robolectric prevents logback-android from grabbing assets
 resources, so we have to direct logback-android to the logback.xml
 using the `logback.configurationFile` system property. There are a few options for this...
 
-### Command-line
+### Options
+
+#### Command-line
 
 ```
 $ mvn test -Dlogback.configurationFile=assets/logback.xml
 ```
 
-### Maven property
+#### Maven property
 The `maven-surefire-plugin` allows setting system variables, but this is only visible
 to logback-android when building from command line (does not work when running this from
 Eclipse).
@@ -39,7 +41,7 @@ Eclipse).
 </project>
 ```
 
-### System.setProperty()
+#### `System.setProperty()`
 
 Setting the property directly with `System.setProperty()` is reliable for both
 command-line builds and from Eclipse.

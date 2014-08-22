@@ -3,7 +3,7 @@ This project demonstrates how to use logback-android with Robolectric.
 
 Note that Robolectric prevents logback-android from grabbing assets
 resources, so we have to direct logback-android to the logback.xml
-using system properties. There are a few options for this...
+using the `logback.configurationFile` system property. There are a few options for this...
 
 ### Command-line
 

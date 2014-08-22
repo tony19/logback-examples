@@ -65,7 +65,7 @@ public class HomeActivityTest {
   public static void afterClass() {
     System.clearProperty(ContextInitializer.CONFIG_FILE_PROPERTY);
   }
-  
+
   ...
 }
 ```

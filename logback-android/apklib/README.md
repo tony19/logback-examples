@@ -1,3 +1,4 @@
+*THIS EXAMPLE DOESN'T WORK YET...*
 
 This project demonstrates how to build an app that depends on an Android library
 project (apklib) that uses logback-android.

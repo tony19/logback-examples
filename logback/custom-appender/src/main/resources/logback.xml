@@ -1,0 +1,11 @@
+<configuration debug="true">
+  <appender name="custom" class="com.github.tony19.example.customappender.CustomAppender">
+    <config class="com.github.tony19.example.customappender.Config">
+        <capacity>128</capacity>
+    </config>
+  </appender>
+
+  <root level="INFO">
+    <appender-ref ref="custom" />
+  </root>
+</configuration>

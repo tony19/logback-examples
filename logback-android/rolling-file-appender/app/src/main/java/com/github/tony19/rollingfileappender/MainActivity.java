@@ -135,8 +135,5 @@ public class MainActivity extends ActionBarActivity {
         ch.qos.logback.classic.Logger root = (ch.qos.logback.classic.Logger) LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);
         root.setLevel(Level.TRACE);
         root.addAppender(rollingFileAppender);
-
-        // print any status messages (warnings, etc) encountered in logback config
-        StatusPrinter.print(context);
     }
 }
